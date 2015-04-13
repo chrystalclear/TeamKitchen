@@ -38,26 +38,72 @@ public class DialogueController : MonoBehaviour {
 
             // Draw character images. Main talkers are always drawn last.
             if (images != null) {
-                for (int i = images.Length - 1; i >= 0; i--) {
-                    GUI.color = darkened;
-                    if (!IsMainTalker(images[i])) {
-                        GUI.DrawTexture(new Rect(leftEdgeX + (images.Length - (i + 1)) * cameraWidth / 11,
-                                                0,
-                                                cameraWidth,
-                                                Screen.height),
-                            GetTextureFromString(images[i]),
-                            ScaleMode.ScaleToFit);
+                // If odd number of images, draw one in the center, and the rest off center
+                if (images.Length % 2 == 1) {
+                    int middle = images.Length / 2;
+                    for (int i = images.Length - 1; i >= 0; i--) {
+                        GUI.color = darkened;
+                        if (!IsMainTalker(images[i])) {
+                            GUI.DrawTexture(new Rect(leftEdgeX + (i - middle) * cameraWidth / 5,
+                                                    0,
+                                                    cameraWidth,
+                                                    Screen.height),
+                                            GetTextureFromString(images[i]),
+                                            ScaleMode.ScaleToFit);
+                        }
                     }
-                }
-                for (int i = images.Length - 1; i >= 0; i--) {
-                    GUI.color = normal;
-                    if (IsMainTalker(images[i])) {
-                        GUI.DrawTexture(new Rect(leftEdgeX + (images.Length - (i + 1)) * cameraWidth / 11,
-                                                0,
-                                                cameraWidth,
-                                                Screen.height),
-                            GetTextureFromString(images[i]),
-                            ScaleMode.ScaleToFit);
+                    for (int i = images.Length - 1; i >= 0; i--) {
+                        GUI.color = normal;
+                        if (IsMainTalker(images[i])) {
+                            GUI.DrawTexture(new Rect(leftEdgeX + (i - middle) * cameraWidth / 5,
+                                                    0,
+                                                    cameraWidth,
+                                                    Screen.height),
+                                            GetTextureFromString(images[i]),
+                                            ScaleMode.ScaleToFit);
+                        }
+                    }
+                } else { // Else, draw them off center
+                    int middleL = images.Length / 2; // The middle image, rounded up. (e.g. indices 0, 1, 2, 3; and 4 / 2 = 2)
+                    for (int i = images.Length - 1; i >= 0; i--) {
+                        GUI.color = darkened;
+                        if (!IsMainTalker(images[i])) {
+                            if (i < middleL) {
+                                GUI.DrawTexture(new Rect(leftEdgeX - cameraWidth / 4 + ((i + 1) - middleL) * cameraWidth / 2,
+                                                        0,
+                                                        cameraWidth,
+                                                        Screen.height),
+                                    GetTextureFromString(images[i]),
+                                    ScaleMode.ScaleToFit);
+                            } else {
+                                GUI.DrawTexture(new Rect(leftEdgeX + cameraWidth / 4 + (i - middleL) * cameraWidth / 2,
+                                                        0,
+                                                        cameraWidth,
+                                                        Screen.height),
+                                    GetTextureFromString(images[i]),
+                                    ScaleMode.ScaleToFit);
+                            }
+                        }
+                    }
+                    for (int i = images.Length - 1; i >= 0; i--) {
+                        GUI.color = normal;
+                        if (IsMainTalker(images[i])) {
+                            if (i < middleL) {
+                                GUI.DrawTexture(new Rect(leftEdgeX - cameraWidth / 4 + ((i + 1) - middleL) * cameraWidth / 2,
+                                                        0,
+                                                        cameraWidth,
+                                                        Screen.height),
+                                    GetTextureFromString(images[i]),
+                                    ScaleMode.ScaleToFit);
+                            } else {
+                                GUI.DrawTexture(new Rect(leftEdgeX + cameraWidth / 4 + (i - middleL) * cameraWidth / 2,
+                                                        0,
+                                                        cameraWidth,
+                                                        Screen.height),
+                                    GetTextureFromString(images[i]),
+                                    ScaleMode.ScaleToFit);
+                            }
+                        }
                     }
                 }
             }
@@ -122,6 +168,10 @@ public class DialogueController : MonoBehaviour {
         switch (s) {
             case "Shaker_R":
                 return shaker_R;
+            case "Freezer":
+                return freezer;
+            case "Microwave":
+                return microwave;
         }
         return null;
     }
@@ -134,4 +184,7 @@ public class DialogueController : MonoBehaviour {
     }
 
     public Texture shaker_R;
+    public Texture freezer;
+    public Texture microwave;
+
 }

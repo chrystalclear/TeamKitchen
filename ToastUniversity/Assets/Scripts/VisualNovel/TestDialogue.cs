@@ -61,49 +61,54 @@ public class TestDialogue : MonoBehaviour {
                 labels[i] = "Professor";
                 messages[i] = "Sigh... You know you have to put the lid on the blender first, right?";
                 images[i] = new string[1];
-                images[i][0] = "Shaker_R_M";
+                images[i][0] = "Freezer_M";
 
                 i = 3;
                 labels[i] = "You";
                 messages[i] = "...Oops...I...thought I did...";
                 images[i] = new string[1];
-                images[i][0] = "Shaker_R";
+                images[i][0] = "Freezer";
 
                 i = 4;
                 labels[i] = "You";
                 messages[i] = "Sorry... It won't happen again.";
                 images[i] = new string[1];
-                images[i][0] = "Shaker_R";
+                images[i][0] = "Freezer";
 
                 i = 5;
                 labels[i] = "Professor";
                 messages[i] = "Uh huh. Sounds just like what you said about the grill.";
                 images[i] = new string[1];
-                images[i][0] = "Shaker_R_M";
+                images[i][0] = "Freezer_M";
 
                 i = 6;
                 labels[i] = "Students";
                 messages[i] = "Man, what a waste of our tuition dollars.";
-                images[i] = new string[1];
-                images[i][0] = "Shaker_R";
+                images[i] = new string[3];
+                images[i][0] = "Freezer_M";
+                images[i][1] = "Microwave";
+                images[i][2] = "Freezer";
 
                 i = 7;
                 labels[i] = "Students";
                 messages[i] = "I know. Our school starts a scholarship program and the first person they bring over is this klutz?";
-                images[i] = new string[1];
-                images[i][0] = "Shaker_R";
+                images[i] = new string[2];
+                images[i][0] = "Freezer";
+                images[i][1] = "Microwave_M";
 
                 i = 8;
                 labels[i] = "Professor";
                 messages[i] = "Well, looks like it's 2 o'clock. You all can go. Don't forget about the quiz tomorrow!";
-                images[i] = new string[1];
-                images[i][0] = "Shaker_R_M";
+                images[i] = new string[2];
+                images[i][0] = "Freezer_M";
+                images[i][1] = "Microwave";
 
                 i = 9;
                 labels[i] = "Professor";
                 messages[i] = "And YOU need to stay here and clean up this mess you've made.";
-                images[i] = new string[1];
-                images[i][0] = "Shaker_R_M";
+                images[i] = new string[2];
+                images[i][0] = "Freezer_M";
+                images[i][1] = "Microwave";
 
                 i = 10;
                 labels[i] = "You";
