@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class DialogueController : MonoBehaviour {
 
     public Texture dialogueBox;
     public GUIStyle style;
     public GUIStyle labelStyle;
+	/*public struct namedTexture{
+		public string name;
+		public Texture texture;
+	}*/
+	public  Dictionary<string, Texture> imageDict = new Dictionary<string, Texture> ();
+	public Texture[] arr;
 
     private bool boxVisible = false;
     private string label = "";
@@ -19,6 +27,10 @@ public class DialogueController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		foreach(Texture tex in arr){
+			imageDict.Add (tex.name.ToLower(), tex);
+		}
+		print(imageDict);
     }
 
     // Update is called once per frame
@@ -165,7 +177,11 @@ public class DialogueController : MonoBehaviour {
         if (s.Substring(s.Length - 2).Equals("_M")) {
             s = s.Substring(0, s.Length - 2);
         }
-        switch (s) {
+	//	if (!imageDict.ContainsKey (s)) {
+	//		return null;
+	//	}
+		return imageDict [s.ToLower ()];
+        /*switch (s) {
             case "Shaker_R":
                 return shaker_R;
             case "Freezer":
@@ -173,7 +189,7 @@ public class DialogueController : MonoBehaviour {
             case "Microwave":
                 return microwave;
         }
-        return null;
+        return null;*/
     }
 
     public bool GetBoxVisible () {
