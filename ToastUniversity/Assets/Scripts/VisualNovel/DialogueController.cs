@@ -34,7 +34,7 @@ public class DialogueController : MonoBehaviour {
         if (boxVisible) {
             // Left edge of the camera
             float leftEdgeX = Camera.main.ViewportToScreenPoint(new Vector3(0, 0, 0)).x;
-            int cameraWidth = (int)Camera.main.pixelWidth;
+            int cameraWidth = Camera.main.pixelWidth;
 
             // Draw character images. Main talkers are always drawn last.
             if (images != null) {

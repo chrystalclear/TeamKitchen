@@ -17,7 +17,6 @@ public class TestDialogue : MonoBehaviour {
     private string[][] images;
 
 	public string dialogFileName;
-
     // Use this for initialization
     void Start () {
         LoadMessages(step);
@@ -68,6 +67,7 @@ public class TestDialogue : MonoBehaviour {
 			j++;
 
 		}
+
     }
 
     public bool IsFinished () {
