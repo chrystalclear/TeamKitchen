@@ -1,3 +1,7 @@
+ 
+*CRASH*
+0
+
 Students
 Hahahahaha!
 0
@@ -23,7 +27,7 @@ Uh huh. Sounds just like what you said about the grill.
 Freezer_M
 
 Students
-Man, what a waste of our tuition dollars.
+What a waste of our tuition dollars.
 3
 Freezer_M
 Microwave
@@ -36,13 +40,13 @@ Freezer
 Microwave_M
 
 Professor
-Well, looks like it's 2 o'clock. You all can go. Don't forget about the quiz tomorrow!
+Alright, settle down. Looks like it's 2 o'clock. You all can go. Don't forget about the quiz tomorrow!
 2
 Freezer_M
 Microwave
 
 Professor
-And YOU need to stay here and clean up this mess you've made.
+YOU, on the other hand, need to stay here and clean up this mess.
 2
 Freezer_M
 Microwave
