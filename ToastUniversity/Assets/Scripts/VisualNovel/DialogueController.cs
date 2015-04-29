@@ -199,8 +199,4 @@ public class DialogueController : MonoBehaviour {
         boxVisible = display;
     }
 
-    public Texture shaker_R;
-    public Texture freezer;
-    public Texture microwave;
-
 }
