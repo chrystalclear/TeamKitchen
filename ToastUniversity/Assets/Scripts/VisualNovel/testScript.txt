@@ -1,4 +1,8 @@
- 
+DAY 1
+MORNING
+0
+
+  
 *CRASH*
 0
 
@@ -9,48 +13,52 @@ Hahahahaha!
 Professor
 Sigh... You know you have to put the lid on the blender first, right?
 1
-Microwave_M
+teacher filler_M
+CHOICE
+...Oops...I...thought I did...
+Sorry... It won't happen again.
 
 You
 ...Oops...I...thought I did...
 1
-Freezer
+teacher filler
+ENDCHOICE
 
 You
 Sorry... It won't happen again.
 1
-Freezer
+teacher filler
+ENDCHOICE
 
 Professor
 Uh huh. Sounds just like what you said about the grill.
 1
-Freezer_M
+teacher filler_M
 
 Students
 What a waste of our tuition dollars.
-3
-Freezer_M
-Microwave
-Freezer
+1
+teacher filler
 
 Students
 I know. Our school starts a scholarship program and the first person they bring over is this klutz?
-2
-Freezer
-Microwave_M
+1
+teacher filler
 
 Professor
 Alright, settle down. Looks like it's 2 o'clock. You all can go. Don't forget about the quiz tomorrow!
-2
-Freezer_M
-Microwave
+1
+teacher filler_M
 
 Professor
 YOU, on the other hand, need to stay here and clean up this mess.
-2
-Freezer_M
-Microwave
+1
+teacher filler_M
 
 You
 Shoot, I won't make it to my next class in time. I'm going to fall so behind...
+0
+
+ 
+...
 0

@@ -16,6 +16,7 @@ public class DialogueController : MonoBehaviour {
 	public Texture[] arr;
 
     private bool boxVisible = false;
+    private bool launchNextStep = false;
     private string label = "";
     private string message = "";
 
@@ -30,14 +31,13 @@ public class DialogueController : MonoBehaviour {
 		foreach(Texture tex in arr){
 			imageDict.Add (tex.name.ToLower(), tex);
 		}
-		print(imageDict);
     }
 
     // Update is called once per frame
     void Update () {
         if (Input.GetButtonUp("Fire1")) {
-            if (boxVisible) {
-                SetBoxVisible(false);
+            if (!launchNextStep) {
+                launchNextStep = true;
             }
         }
     }
@@ -123,28 +123,28 @@ public class DialogueController : MonoBehaviour {
             // Draw box and text.
             GUI.color = normal;
             GUI.DrawTexture(new Rect(leftEdgeX,
-                                    Screen.height * 3 / 5,
+                                    Screen.height * 12 / 20,
                                     cameraWidth,
                                     Screen.height * 2 / 5),
                             dialogueBox,
                             ScaleMode.StretchToFill);
             if (label != null) {
-                GUI.Label(new Rect(leftEdgeX + cameraWidth / 12 + cameraWidth / 32,
+                GUI.Label(new Rect(leftEdgeX + cameraWidth / 12 + cameraWidth * 2 / 32,
                                   Screen.height * 3 / 5 + Screen.height / 32,
                                   cameraWidth,
                                   Screen.height / 3),
                                   label,
                                   labelStyle);
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12,
-                                  Screen.height * 3 / 5 + Screen.height * 2 / 32,
-                                  cameraWidth * 6 / 8,
+                                  Screen.height * 3 / 5 + Screen.height * 3 / 32,
+                                  cameraWidth * 7 / 8,
                                   Screen.height / 3),
                                   message,
                                   style);
             } else {
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12,
-                                  Screen.height * 3 / 5 + Screen.height * 2 / 32,
-                                  cameraWidth * 6 / 8,
+                                  Screen.height * 3 / 5 + Screen.height * 3 / 32,
+                                  cameraWidth * 7 / 8,
                                   Screen.height / 3),
                                   message,
                                   style);
@@ -190,6 +190,13 @@ public class DialogueController : MonoBehaviour {
                 return microwave;
         }
         return null;*/
+    }
+
+    public bool ReadyForNextStep () {
+        return launchNextStep;
+    }
+    public void ResetLaunchNextStep () {
+        launchNextStep = false;
     }
 
     public bool GetBoxVisible () {
