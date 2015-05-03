@@ -7,7 +7,9 @@ public class TurnController : MonoBehaviour {
     float timer;
 
     //LOLOLOL TOO LAZY TO MAKE AN ENEMY SCRIPT THAT DOES NOTHING
-    public static int enemyHealth = 16;
+    public static int enemyHealth = 20;
+    int attackTarget = 0;
+    bool attacking = false;
 
     public Transform powEffect;
 
@@ -38,13 +40,17 @@ public class TurnController : MonoBehaviour {
         }
         if (!playerTurn) {
             timer -= Time.deltaTime;
-            if (timer <= 0) {
-                playerTurn = true;
-                foreach (GameObject character in characters) {
-                    Instantiate(powEffect, character.transform.position, Quaternion.identity);
-                    character.GetComponent<BattleBehavior>().TakeDamage(2);
-                    character.GetComponent<BattleBehavior>().NewTurn();
+            if (timer <= 0 && !attacking) {
+                float rng = Random.value;
+                if (rng < 0.33f) {
+                    attackTarget = 0;
+                } else if (rng < 0.66f) {
+                    attackTarget = 1;
+                } else {
+                    attackTarget = 2;
                 }
+                attacking = true;
+                characters[attackTarget].GetComponent<BattleBehavior>().BlockSequence();
             }
         }
 
@@ -55,4 +61,14 @@ public class TurnController : MonoBehaviour {
             }
         }
 	}
+
+    public void NextPlayerTurn () {
+        playerTurn = true;
+        attacking = false;
+        foreach (GameObject character in characters) {
+            //Instantiate(powEffect, character.transform.position, Quaternion.identity);
+            //character.GetComponent<BattleBehavior>().TakeDamage(2);
+            character.GetComponent<BattleBehavior>().NewTurn();
+        }
+    }
 }

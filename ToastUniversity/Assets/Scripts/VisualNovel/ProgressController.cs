@@ -20,14 +20,11 @@ public class ProgressController : MonoBehaviour {
     public static Dictionary<string, Sprite> backgroundSprites = new Dictionary<string, Sprite>();
     public Sprite[] bgsprites;
 
-    void Awake () {
-        dialogueController = GameObject.FindGameObjectWithTag("DialogueController");
-    }
-
 	// Use this for initialization
     void Start () {
         gameStage = 0;
         background = backgroundGrabber;
+        dialogueController = GameObject.FindGameObjectWithTag("DialogueController");
         foreach (Sprite spr in bgsprites) {
             backgroundSprites.Add(spr.name, spr);
         }
@@ -61,13 +58,4 @@ public class ProgressController : MonoBehaviour {
         }
     }
 
-    public static string CurrentBackground () {
-        switch (gameStage) {
-            case 0:
-                return "ClassroomDay(WIP)";
-            case 1:
-                return "ClassroomAft(WIP)";
-        }
-        return "";
-    }
 }

@@ -44,6 +44,9 @@ public class TestDialogue : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (dialogueHandler == null) {
+            dialogueHandler = GameObject.FindGameObjectWithTag("DialogueController");
+        }
         if (messages != null && arrayStep < messages.Length) {
             if (dialogueHandler.GetComponent<DialogueController>().ReadyForNextStep()) {
                 dialogueHandler.GetComponent<DialogueController>().ShowText(labels[arrayStep], messages[arrayStep], images[arrayStep]);
@@ -66,6 +69,9 @@ public class TestDialogue : MonoBehaviour {
 
     public void LoadMessages (int s) {
 		string[] lines = System.IO.File.ReadAllLines(dialogFileName);
+        //string url = "http://www.calvinkirbikaka.com/games/ToastUniversity/testScript.txt";
+        //WWW www = new WWW(url);
+        //string[] lines = www.text.Split('\n');
         // Reset everything
         finished = false;
         step = 0;

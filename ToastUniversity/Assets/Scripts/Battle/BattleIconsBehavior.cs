@@ -31,9 +31,17 @@ public class BattleIconsBehavior : MonoBehaviour {
                     character.GetComponent<BattleBehavior>().AttackCommand();
                 } else if (iconType == 1) {
                     character.GetComponent<BattleBehavior>().WaitCommand();
+                } else if (iconType == 2) {
+                    character.GetComponent<BattleBehavior>().blockSuccess = true;
+                    GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+                    return;
                 }
                 Destroy(gameObject);
             } else {
+                if (iconType == 2) {
+                    GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+                    return;
+                }
                 Destroy(gameObject);
             }
         }

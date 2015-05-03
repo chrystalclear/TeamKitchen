@@ -12,7 +12,7 @@ public class DialogueController : MonoBehaviour {
 		public string name;
 		public Texture texture;
 	}*/
-	public  Dictionary<string, Texture> imageDict = new Dictionary<string, Texture> ();
+	public Dictionary<string, Texture> imageDict = new Dictionary<string, Texture> ();
 	public Texture[] arr;
 
     private bool boxVisible = false;
@@ -122,12 +122,14 @@ public class DialogueController : MonoBehaviour {
 
             // Draw box and text.
             GUI.color = normal;
-            GUI.DrawTexture(new Rect(leftEdgeX,
-                                    Screen.height * 12 / 20,
-                                    cameraWidth,
-                                    Screen.height * 2 / 5),
-                            dialogueBox,
-                            ScaleMode.StretchToFill);
+            if (dialogueBox != null) {
+                GUI.DrawTexture(new Rect(leftEdgeX,
+                                        Screen.height * 12 / 20,
+                                        cameraWidth,
+                                        Screen.height * 2 / 5),
+                                dialogueBox,
+                                ScaleMode.StretchToFill);
+            }
             if (label != null) {
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12 + cameraWidth * 2 / 32,
                                   Screen.height * 3 / 5 + Screen.height / 32,

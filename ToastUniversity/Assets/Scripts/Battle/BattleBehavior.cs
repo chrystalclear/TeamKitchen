@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BattleBehavior : MonoBehaviour {
 
+    public GameObject turnController;
+
     public int associatedCharacter;
     public Transform attackIcon;
     public Transform waitIcon;
@@ -12,6 +14,10 @@ public class BattleBehavior : MonoBehaviour {
     int hp = 10;
     int attack = 2;
     bool turnDone = false;
+
+    Transform defend = null;
+    public bool blockSuccess = false;
+    float blockTimer = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +30,18 @@ public class BattleBehavior : MonoBehaviour {
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1);
         } else {
             GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        if (defend != null) {
+            blockTimer -= Time.deltaTime;
+            if (blockTimer <= 0) {
+                if (!blockSuccess) {
+                    Instantiate(powEffect, transform.position, Quaternion.identity);
+                    TakeDamage(2);
+                }
+                Destroy(defend.gameObject);
+                defend = null;
+                turnController.GetComponent<TurnController>().NextPlayerTurn();
+            }
         }
 	}
 
@@ -56,5 +74,12 @@ public class BattleBehavior : MonoBehaviour {
 
     public void TakeDamage (int dmg) {
         hp -= dmg;
+    }
+
+    public void BlockSequence () {
+        defend = Instantiate(blockIcon, transform.position, Quaternion.identity) as Transform;
+        defend.GetComponent<BattleIconsBehavior>().associatedCharacter = associatedCharacter;
+        blockSuccess = false;
+        blockTimer = 0.4f + Random.Range(0.1f, 0.35f);
     }
 }
