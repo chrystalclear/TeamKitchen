@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dc0ec883dfe16344f96d0d6d5fdf208d
+timeCreated: 1430331656
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - attackIcon: {fileID: 462938, guid: 01950380f0fb6574c8d0cbccc7bb2901, type: 2}
+  - waitIcon: {fileID: 409554, guid: 69909a12f4fdc4442a61e3299e2a4c76, type: 2}
+  - blockIcon: {fileID: 498740, guid: a8c49e1e103435544aaecaf0fa106f16, type: 2}
+  - powEffect: {fileID: 498290, guid: 0abdbf11cfc2af24d91c713c4b7e7446, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
