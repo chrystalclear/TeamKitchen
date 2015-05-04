@@ -7,6 +7,7 @@ public class TurnController : MonoBehaviour {
     float timer;
 
     //LOLOLOL TOO LAZY TO MAKE AN ENEMY SCRIPT THAT DOES NOTHING
+	public static int maxHP = 20;
     public static int enemyHealth = 20;
     int attackTarget = 0;
     bool attacking = false;
