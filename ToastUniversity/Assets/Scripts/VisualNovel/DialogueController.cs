@@ -8,6 +8,7 @@ public class DialogueController : MonoBehaviour {
     public Texture dialogueBox;
     public GUIStyle style;
     public GUIStyle labelStyle;
+	public GUIStyle buttonStyle;
 	/*public struct namedTexture{
 		public string name;
 		public Texture texture;
@@ -31,14 +32,16 @@ public class DialogueController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		//Camera.main.aspect = 640f / 480f;
 		foreach(Texture tex in arr){
 			imageDict.Add (tex.name.ToLower(), tex);
 		}
-    }
-
-    // Update is called once per frame
-    void Update () {
-        if ((Input.GetButtonUp("Fire1") || (Input.touchCount>0&&Input.GetTouch (0).phase==TouchPhase.Began)) && !showingChoice) {
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		//  if ((Input.GetButtonUp("Fire1") || (Input.touchCount>0&&Input.GetTouch (0).phase==TouchPhase.Ended)) && !showingChoice) {
+		if((Input.touchCount>0&&Input.GetTouch (0).phase == TouchPhase.Ended) && !showingChoice){
             if (!launchNextStep) {
                 launchNextStep = true;
             }
@@ -46,11 +49,16 @@ public class DialogueController : MonoBehaviour {
     }
 
     void OnGUI () {
+		Color black = new Color (0, 0, 0);
         if (boxVisible) {
             // Left edge of the camera
             float leftEdgeX = Camera.main.ViewportToScreenPoint(new Vector3(0, 0, 0)).x;
             int cameraWidth = Camera.main.pixelWidth;
-
+			int cameraHeight = Camera.main.pixelHeight;
+			GUI.backgroundColor = Color.black;
+			
+		//	GUI.Button(Rect(0,0,cameraWidth,cameraHeight), "A button");
+			int height = Camera.main.pixelHeight;
             // Draw character images. Main talkers are always drawn last.
             if (images != null) {
                 // If odd number of images, draw one in the center, and the rest off center
@@ -62,7 +70,7 @@ public class DialogueController : MonoBehaviour {
                             GUI.DrawTexture(new Rect(leftEdgeX + (i - middle) * cameraWidth / 5,
                                                     0,
                                                     cameraWidth,
-                                                    Screen.height),
+                                                    height),
                                             GetTextureFromString(images[i]),
                                             ScaleMode.ScaleToFit);
                         }
@@ -73,7 +81,7 @@ public class DialogueController : MonoBehaviour {
                             GUI.DrawTexture(new Rect(leftEdgeX + (i - middle) * cameraWidth / 5,
                                                     0,
                                                     cameraWidth,
-                                                    Screen.height),
+                                                    height),
                                             GetTextureFromString(images[i]),
                                             ScaleMode.ScaleToFit);
                         }
@@ -87,14 +95,14 @@ public class DialogueController : MonoBehaviour {
                                 GUI.DrawTexture(new Rect(leftEdgeX - cameraWidth / 4 + ((i + 1) - middleL) * cameraWidth / 2,
                                                         0,
                                                         cameraWidth,
-                                                        Screen.height),
+                                                        height),
                                     GetTextureFromString(images[i]),
                                     ScaleMode.ScaleToFit);
                             } else {
                                 GUI.DrawTexture(new Rect(leftEdgeX + cameraWidth / 4 + (i - middleL) * cameraWidth / 2,
                                                         0,
                                                         cameraWidth,
-                                                        Screen.height),
+                                                        height),
                                     GetTextureFromString(images[i]),
                                     ScaleMode.ScaleToFit);
                             }
@@ -107,14 +115,14 @@ public class DialogueController : MonoBehaviour {
                                 GUI.DrawTexture(new Rect(leftEdgeX - cameraWidth / 4 + ((i + 1) - middleL) * cameraWidth / 2,
                                                         0,
                                                         cameraWidth,
-                                                        Screen.height),
+                                                        height),
                                     GetTextureFromString(images[i]),
                                     ScaleMode.ScaleToFit);
                             } else {
                                 GUI.DrawTexture(new Rect(leftEdgeX + cameraWidth / 4 + (i - middleL) * cameraWidth / 2,
                                                         0,
                                                         cameraWidth,
-                                                        Screen.height),
+                                                        height),
                                     GetTextureFromString(images[i]),
                                     ScaleMode.ScaleToFit);
                             }
@@ -129,28 +137,28 @@ public class DialogueController : MonoBehaviour {
                 GUI.DrawTexture(new Rect(leftEdgeX,
                                         Screen.height * 12 / 20,
                                         cameraWidth,
-                                        Screen.height * 2 / 5),
+                                        height * 2 / 5),
                                 dialogueBox,
                                 ScaleMode.StretchToFill);
             }
             if (label != null) {
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12 + cameraWidth * 2 / 32,
-                                  Screen.height * 3 / 5 + Screen.height / 32,
+                                  height * 3 / 5 + height / 32,
                                   cameraWidth,
-                                  Screen.height / 3),
+                                  height / 3),
                                   label,
                                   labelStyle);
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12,
-                                  Screen.height * 3 / 5 + Screen.height * 3 / 32,
-                                  cameraWidth * 7 / 8,
-                                  Screen.height / 3),
+				                   height * 3 / 5 + height * 3 / 32,
+				                   cameraWidth * 7 / 8,
+                                  height / 3),
                                   message,
                                   style);
             } else {
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12,
-                                  Screen.height * 3 / 5 + Screen.height * 3 / 32,
+                                  height * 3 / 5 + height * 3 / 32,
                                   cameraWidth * 7 / 8,
-                                  Screen.height / 3),
+                                  height / 3),
                                   message,
                                   style);
             }
@@ -158,17 +166,17 @@ public class DialogueController : MonoBehaviour {
             //Draw choice buttons if at a choice
             if (showingChoice) {
                 if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 10/100,
-                                    Screen.height * 10/100,
+                                    height * 10/100,
                                     cameraWidth * 80/100,
-                                    Screen.height * 15/100), choice1)) {
-                    showingChoice = false;
+				                        height * 15/100), choice1)) {
+					showingChoice = false;
                     GetComponent<TestDialogue>().chooseFirstChoice();
                 }
                 if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 10/100,
-                                    Screen.height * 40/100,
+                                    height * 40/100,
                                     cameraWidth * 80/100,
-                                    Screen.height * 15/100), choice2)) {
-                    showingChoice = false;
+				                        height * 15/100), choice2)) {
+					showingChoice = false;
                     GetComponent<TestDialogue>().chooseSecondChoice();
                 }
             }
