@@ -38,7 +38,7 @@ public class DialogueController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if ((Input.GetButtonUp("Fire1") || Input.touchCount>0) && !showingChoice) {
+        if ((Input.GetButtonUp("Fire1") || (Input.touchCount>0&&Input.GetTouch (0).phase==TouchPhase.Began)) && !showingChoice) {
             if (!launchNextStep) {
                 launchNextStep = true;
             }
