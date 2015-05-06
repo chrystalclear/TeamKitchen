@@ -9,8 +9,12 @@ public class TestDialogue : MonoBehaviour {
     private int step = 0;
     // The current step in the array of messages.
     private int arrayStep = 0;
+    // The current step in making choices.
+    private int choiceStep = 0;
     // Finished with the current step. Stop sending messages until the next step.
     private bool finished = false;
+    // True iff we're currently in dialogue from making the first choice.
+    private bool firstChoice = false;
 
     public int num_messages = 13;
     private string[] labels;
@@ -19,7 +23,7 @@ public class TestDialogue : MonoBehaviour {
     /* Example of what the choice indices are:
      * 
      * "Hey how are you?"               (message 1)
-     * CHOICE                           (choiceLines[0] = 1)
+     * CHOICE                           (choiceIndices[0] = 1)
      * I'm fine!                        (choiceMessages[0] = "I'm fine!")
      * I'm feeling terrible!            (choiceMessages[1] = "I'm feeling terrible!")
      * 
@@ -49,9 +53,19 @@ public class TestDialogue : MonoBehaviour {
         }
         if (messages != null && arrayStep < messages.Length) {
             if (dialogueHandler.GetComponent<DialogueController>().ReadyForNextStep()) {
-                dialogueHandler.GetComponent<DialogueController>().ShowText(labels[arrayStep], messages[arrayStep], images[arrayStep]);
-                arrayStep++;
-                dialogueHandler.GetComponent<DialogueController>().ResetLaunchNextStep();
+                if (choiceIndices[choiceStep] != 0 && choiceIndices[choiceStep] == arrayStep - 1) {
+                    dialogueHandler.GetComponent<DialogueController>().ShowChoice(choiceMessages[choiceStep * 2], choiceMessages[choiceStep * 2 + 1]);
+                    choiceStep++;
+                    dialogueHandler.GetComponent<DialogueController>().ResetLaunchNextStep();
+                } else {
+                    if (firstChoice && arrayStep == choiceSecond[choiceStep - 1]) {
+                        arrayStep = choiceEnd[choiceStep - 1];
+                        firstChoice = false;
+                    }
+                    dialogueHandler.GetComponent<DialogueController>().ShowText(labels[arrayStep], messages[arrayStep], images[arrayStep]);
+                    arrayStep++;
+                    dialogueHandler.GetComponent<DialogueController>().ResetLaunchNextStep();
+                }
             }
         } else if (arrayStep == messages.Length && dialogueHandler.GetComponent<DialogueController>().ReadyForNextStep()) {
             dialogueHandler.GetComponent<DialogueController>().SetBoxVisible(false);
@@ -76,6 +90,7 @@ public class TestDialogue : MonoBehaviour {
         finished = false;
         step = 0;
         arrayStep = 0;
+        choiceStep = 0;
         labels = new string[num_messages];
         messages = new string[num_messages];
         images = new string[num_messages][];
@@ -138,5 +153,13 @@ public class TestDialogue : MonoBehaviour {
 
     public bool IsFinished () {
         return finished;
+    }
+
+    public void chooseSecondChoice () {
+        arrayStep = choiceSecond[choiceStep - 1];
+    }
+
+    public void chooseFirstChoice () {
+        firstChoice = true;
     }
 }

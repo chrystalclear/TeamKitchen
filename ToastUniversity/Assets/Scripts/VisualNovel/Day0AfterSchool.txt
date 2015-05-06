@@ -6,6 +6,9 @@ Zach
 Ho there, lost child. I see thou hast troubles.
 1
 zach
+CHOICE
+I... what?!
+Sorry, I don't have any spare change.
 
 You
 I... what?!
@@ -21,6 +24,18 @@ You
 ...Please stop.
 1
 zach
+ENDCHOICE
+
+You
+Sorry, I don't have any spare change.
+1
+zach
+
+Zach
+What? No, I'm not--
+1
+zach_M
+ENDCHOICE
 
 Zach
 Fine. Sue me for trying to add a little drama to your life.
@@ -66,9 +81,12 @@ Zach
 Jeez, I'm not paid enough for this.
 1
 zach_M
+CHOICE
+Okay! See you there!
+I'm not sure if I should...
 
 You
-Alright, I'll see you there!
+Okay! See you there!
 1
 zach
 
@@ -91,6 +109,28 @@ Zach
 Uh, well, not out loud I guess.
 1
 zach_M
+ENDCHOICE
+
+You
+I'm not sure if I should...
+1
+zach
+
+Zach
+Come on, kid. Don't you want to show those prissy kids you got what it takes? You won't get into trouble. Er- well- not THAT much trouble.
+1
+zach_M
+
+You
+But I'm already in trouble most of the time!
+1
+zach
+
+Zach
+That's the spirit! A little more won't hurt.
+1
+zach_M
+ENDCHOICE
 
 Zach
 Come around midnight and I'll leave the doors unlocked.
