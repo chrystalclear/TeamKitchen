@@ -60,7 +60,12 @@ public class TurnController : MonoBehaviour {
         }
 
         if (enemyHealth <= 0) {
-			Application.LoadLevel("DaytimeMainMenu");
+            if (ProgressController.gameStage == 3) {
+                Application.LoadLevel("VisualNovel");
+                ProgressController.gameStage++;
+            } else {
+                Application.LoadLevel("DaytimeMainMenu");
+            }
 
 			GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
             if (enemy != null) {

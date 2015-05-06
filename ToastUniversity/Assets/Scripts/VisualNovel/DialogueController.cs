@@ -142,9 +142,6 @@ public class DialogueController : MonoBehaviour {
                                 ScaleMode.StretchToFill);
             }
             if (label != null) {
-                if (label.Equals("You")) {
-                    label = Name.playerName;
-                }
                 GUI.Label(new Rect(leftEdgeX + cameraWidth / 12 + cameraWidth * 2 / 32,
                                   height * 3 / 5 + height / 32,
                                   cameraWidth,

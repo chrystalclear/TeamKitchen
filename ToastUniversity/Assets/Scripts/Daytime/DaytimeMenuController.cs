@@ -77,6 +77,8 @@ public class DaytimeMenuController : MonoBehaviour {
                                         cameraHeight * 20 / 100,
                                         cameraWidth * 26 / 100,
                                         cameraHeight * 12 / 100), "Freezer")) {
+                    characterSelect = "freezer";
+                    ProgressController.CharConversation(characterSelect);
                 }
                 if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 7 / 100,
                                         cameraHeight * 35 / 100,

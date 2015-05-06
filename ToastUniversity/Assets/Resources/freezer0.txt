@@ -1,0 +1,15 @@
+3
+You
+Wow it's hot today. Isn't it really hot with that fur coat?
+1
+freezer
+
+Freezer
+No.
+1
+freezer_M
+
+You
+...alright.
+1
+freezer

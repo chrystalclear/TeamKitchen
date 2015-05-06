@@ -14,6 +14,7 @@ public class ProgressController : MonoBehaviour {
      * */
     public static int gameStage;
     public static GameObject dialogueController;
+    public static bool conversation;
 
     public static GameObject background;
     public GameObject backgroundGrabber;
@@ -36,6 +37,11 @@ public class ProgressController : MonoBehaviour {
 	}
 
     public static void NextStage () {
+        if (conversation) {
+            conversation = false;
+            Application.LoadLevel("DaytimeMainMenu");
+            return;
+        }
         switch (gameStage) {
             case 0:
                 background.GetComponent<SpriteRenderer>().sprite = backgroundSprites["ClassroomAft(WIP)"];
@@ -55,10 +61,31 @@ public class ProgressController : MonoBehaviour {
                 gameStage++;
                 break;
             case 2:
-                // Load next level
                 Application.LoadLevel("Battle");
                 break;
+            case 3:
+                background.GetComponent<SpriteRenderer>().sprite = backgroundSprites["ClassroomNight(WIP)"];
+                dialogueController.GetComponent<TestDialogue>().dialogFileName = "Assets/Scripts/VisualNovel/Day0Night2.txt";
+				dialogueController.GetComponent<TestDialogue>().textAsset=Resources.Load ("Day0Night2") as TextAsset;
+				dialogueController.GetComponent<TestDialogue>().num_messages = 53;
+                dialogueController.GetComponent<TestDialogue>().LoadMessages(0);
+                gameStage++;
+                break;
+            case 4:
+                Application.LoadLevel("DaytimeMainMenu");
+                break;
         }
+    }
+
+    public static void CharConversation (string s) {
+        background.GetComponent<SpriteRenderer>().sprite = backgroundSprites["ClassroomDay(WIP)"];
+        if (s.Equals("freezer")) {
+            dialogueController.GetComponent<TestDialogue>().textAsset = Resources.Load("freezer0") as TextAsset;
+        }
+        dialogueController.GetComponent<TestDialogue>().LoadMessages(0);
+        conversation = true;
+        
+        Application.LoadLevel("VisualNovel");
     }
 
 }
