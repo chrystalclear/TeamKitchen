@@ -21,7 +21,7 @@ public class TitleScreenController : MonoBehaviour {
                                 Screen.height * 70 / 100,
                                 cameraWidth * 60 / 100,
                                 Screen.height * 15 / 100), "Start Game")) {
-            Application.LoadLevel("VisualNovel");
+            Application.LoadLevel("NameSelect");
         }
     }
 }
