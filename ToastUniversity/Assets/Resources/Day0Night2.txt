@@ -1,257 +1,237 @@
-53
-DAY 1
-EVENING
-0
-
-You
-Well, it's midnight and I'm here. Let's see if the door's unlocked.
-0
-
- 
-*creaaaaaak*
-0
-
-You
-Man, it's really dark in--
-0
-
- 
-*CRASH*
-0
-
-You
-I, uh...
-0
-
-You
-Oops.
-0
-
-You
-Sorry about that again, blender.
-0
-
-You
-Okay, I guess it's time to get started. Let's see what ingredients are in the pantry that I can work with.
-0
-
-You
-...?
-0
-
-You
-That's funny, usually the vegetables are on this shelf, right?
-0
-
-You
-It's way too dark to see anything. Where's the light switch?
-0
-
- 
-*skitter skitter*
-0
-
-You
-...What was that noise...?
-0
-
- 
-*skitter skitter*
-0
-
-You
-Weird janitor guy, is that you?!
-0
-
- 
- 
-1
-broccolif
-
-You
-Woah, what the--
-1
-broccolif
-
-Steve
-GraaHRrrHRRh!!
-1
-broccolif_M
-
-You
-AH! OW! WHAT ARE THESE THINGS?!
-1
-broccolif
-
- 
-*CRASH* *CLATTER*
-1
-broccolif_M
-
- 
-*CLANG* *CLINK*
-1
-broccolif_M
-
- 
-*BONK* *KADOOSH*
-1
-broccolif_M
-
- 
-*OTHER HUMAN-BROCCOLI STRUGGLING NOISES*
-1
-broccolif_M
-
-???
-What was that?!
-2
-broccolif
-microwave angry
-
-???
-Damn, did those things get out again?
-2
-broccolif
-blender angry
-
-???
-Sure sounds like it! Let's go guys!
-2
-broccolif
-rice cooker
-
-You
-HELP! OVER HERE!
-1
-broccolif
-
-???
-...! U-uh is that...?
-2
-broccolif
-rice cooker
-
-???
-Um, we're coming! Stay where you are!
-2
-broccolif
-rice cooker
-
-Steve
-taASsttTYYYYY HuuUUumanNNnn...
-1
-broccolif_M
-
-You
-EEK! THIS ISN'T HOW THE FOOD CHAIN WORKS!
-1
-broccolif
-
- 
-*SMACK!* *POW!*
-2
-broccolif
-freezer_M
-
-Steve
-eeeEEeeeeeEKKKK!
-2
-broccolif_M
-freezer
-
-???
-We're here! ...What the? A human? How'd this idiot get here? 
-2
-freezer
-microwave angry_M
-
-???
-We've got bigger problems right now. More are coming.
-2
-freezer_M
-microwave angry
-
-???
-Well, crap!
-2
-freezer
-microwave angry_M
-
-You
-Who... are these people?
-0
-
- 
- 
-1
-freezer_M
-
-You
-That's the guy who got here first...
-0
-
- 
- 
+47
+Microwave
+Hey you! Get out of the way!
 1
 microwave angry_M
 
-You
-And that's the girl who called me an idiot.
-0
-
- 
- 
-1
-blender angry_M
-
- 
- 
-1
-cocktail shaker_M
-
- 
- 
+French Press
+Hoho! Leave these guys to me! I’ll crush all those disgusting creatures with my strength and dashing good looks. 
 1
 fp with hat_M
 
- 
- 
+Blender
+Oh please. Like you can do anything with your week-old piece of bread. I’m gonna slice them aaaalll up~
+2
+fp with hat
+blender happy yander_M
+
+French Press
+*le gasp* Sacrebleu!! An uncultured peasant like you wouldn’t appreciate the beauty of such a fine specimen of baguette. 
+2
+fp angry with hat_M
+blender happy yander
+
+Blender
+I’ll shove that gosh darn baguette into your-- 
+2
+fp angry with hat
+blender angry yander_M
+
+Microwave
+SHUT UP ALREADY!
 1
-rice cooker_M
+microwave angry_M
 
 You
-It looks like there are 4 other people who just came in.
+Wow things look really hectic...
 0
 
- 
- 
+Rice Cooker
+Ummm, excuse me?
 1
-toasterf
-
-You
-And is that...?
-1
-toasterf
-
- 
- 
-1
-toasterf_M
-
-You
-That must be their leader!
-1
-toasterf_M
-
-Steve
-rrrAWAWWWRRRRRR!!
-1
-broccolif_M
-
-You
-It looks like the three of them are going to finish off that thing from before!
-3
-freezer_M
-microwave angry_M
 rice cooker_M
+
+You
+WAAAH!
+1
+rice cooker
+
+Rice Cooker
+Oh! I didn’t mean to startle you. Are you okay?
+1
+rice cooker_M
+
+You
+Oh um… I guess I’m fine.
+1
+rice cooker
+
+Rice Cooker
+Good! Well, I’m going to help out the rest of the team, but I’ll come check on you later okay?
+1
+rice cooker happy_M
+
+You
+...
+0
+
+Cocktail Shaker
+Looks like you need a drink. Here.
+1
+cocktail shaker_M
+
+You
+Woah another one! Umm… I’m not sure if I should...
+1
+cocktail shaker
+
+Cocktail Shaker
+You’re a cautious one aren’t you? A good trait to have. But no worries, it’s perfectly harmless.
+1
+cocktail shaker happy_M
+
+Cocktail Shaker
+Unless you count alcohol poisoning, I guess.
+1
+cocktail shaker_M
+CHOICE
+Alright, just one sip.
+I… think I’ll pass.
+
+You
+Alright, just one sip.
+1
+cocktail shaker
+
+You
+…
+1
+cocktail shaker
+
+You
+Wow, I feel a lot better!
+1
+cocktail shaker
+
+Cocktail Shaker
+Just what you marti-needed, right?
+1
+cocktail shaker happy_M
+
+You
+Uh, yeah. Thank you.
+1
+cocktail shaker happy
+END CHOICE
+
+You
+I… think I’ll pass.
+1
+cocktail shaker
+
+Cocktail Shaker
+Looks like my offering was grena-denied. Suit yourself.
+1
+cocktail shaker sad_M
+END CHOICE
+
+Cocktail Shaker
+Ah those guys are causing a lot of trouble as usual.
+1
+cocktail shaker_M
+
+You
+So…
+1
+cocktail shaker
+
+You
+What’s happening right now?
+1
+cocktail shaker
+
+Cocktail Shaker
+Oh the usual. Battling demon vegetables from who knows where.
+1
+cocktail shaker happy_M
+
+You
+...so this is normal.
+1
+cocktail shaker
+
+Cocktail Shaker
+What else would you be doing on a Friday night?
+1
+cocktail shaker happy_M
+
+
+*CRASH BANG!*
+0
+
+Microwave
+Blender! Stop running into me!
+2
+microwave angry_M
+blender
+
+Blender
+Why don’t you move your big clunky self outta the way--- ow! Freezer!
+2
+microwave angry
+blender angry_M
+
+Freezer
+...move.
+1
+freezer_M
+
+Rice Cooker
+Hey, guys...! Guys stop arguing...! Ow!
+1
+rice cooker sad_M
+
+French Press
+Ah it’s dangerous to be around me when I’m unleashing my baguette whirlwind move! You should be more careful. 
+1
+fp with hat_M
+
+You
+They seem kind of… disorganized.
+0
+
+Cocktail Shaker
+A mai-tai mess indeed.
+1
+cocktail shaker_M
+
+You
+Aren’t you going to do anything?
+1
+cocktail shaker
+
+Cocktail Shaker
+Nah, I don’t like getting caught in shaky situations.
+1
+cocktail shaker_M
+
+You
+But if they keep getting hurt like that, won’t they break? And all the vegetables just on the ground… it’s such a waste!
+1
+cocktail shaker
+
+Cocktail Shaker
+Hmm… maybe you should do something about it then.
+1
+cocktail shaker happy_M
+
+You
+Nnn…
+1
+cocktail shaker happy
+
+You
+Ugh... If I help... I'm really going to mess things up like I always do...
+0
+
+You
+But…
+0
+
+You
+...seeing all these precious appliances endangering themselves like this…
+0
+
+You
+I HAVE TO DO SOMETHING!
+0
