@@ -40,7 +40,7 @@ public class ProgressController : MonoBehaviour {
             case 0:
                 background.GetComponent<SpriteRenderer>().sprite = backgroundSprites["ClassroomAft(WIP)"];
                 dialogueController.GetComponent<TestDialogue>().dialogFileName = "Assets/Scripts/VisualNovel/Day0AfterSchool.txt";
-                dialogueController.GetComponent<TestDialogue>().num_messages = 23;
+                dialogueController.GetComponent<TestDialogue>().num_messages = 29;
                 dialogueController.GetComponent<TestDialogue>().LoadMessages(0);
                 gameStage++;
                 break;

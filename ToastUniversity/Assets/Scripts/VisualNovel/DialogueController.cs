@@ -17,6 +17,9 @@ public class DialogueController : MonoBehaviour {
 
     private bool boxVisible = false;
     private bool launchNextStep = false;
+    private bool showingChoice = false;
+    private string choice1 = "";
+    private string choice2 = "";
     private string label = "";
     private string message = "";
 
@@ -35,7 +38,7 @@ public class DialogueController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetButtonUp("Fire1")) {
+        if (Input.GetButtonUp("Fire1") && !showingChoice) {
             if (!launchNextStep) {
                 launchNextStep = true;
             }
@@ -151,6 +154,25 @@ public class DialogueController : MonoBehaviour {
                                   message,
                                   style);
             }
+
+            //Draw choice buttons if at a choice
+            if (showingChoice) {
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 10/100,
+                                    Screen.height * 10/100,
+                                    cameraWidth * 80/100,
+                                    Screen.height * 15/100), choice1)) {
+                    showingChoice = false;
+                    GetComponent<TestDialogue>().chooseFirstChoice();
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 10/100,
+                                    Screen.height * 40/100,
+                                    cameraWidth * 80/100,
+                                    Screen.height * 15/100), choice2)) {
+                    showingChoice = false;
+                    GetComponent<TestDialogue>().chooseSecondChoice();
+                }
+            }
+
         }
     }
 
@@ -171,6 +193,12 @@ public class DialogueController : MonoBehaviour {
         images = left;
     }
 
+    public void ShowChoice (string c1, string c2) {
+        showingChoice = true;
+        choice1 = c1;
+        choice2 = c2;
+    }
+
     private bool IsMainTalker (string s) {
         return s.Substring(s.Length - 2).Equals("_M");
     }
@@ -183,15 +211,6 @@ public class DialogueController : MonoBehaviour {
 	//		return null;
 	//	}
 		return imageDict [s.ToLower ()];
-        /*switch (s) {
-            case "Shaker_R":
-                return shaker_R;
-            case "Freezer":
-                return freezer;
-            case "Microwave":
-                return microwave;
-        }
-        return null;*/
     }
 
     public bool ReadyForNextStep () {
