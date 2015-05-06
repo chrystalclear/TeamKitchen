@@ -88,7 +88,7 @@ public class BattleBehavior : MonoBehaviour {
         defend = Instantiate(blockIcon, transform.position, Quaternion.identity) as Transform;
         defend.GetComponent<BattleIconsBehavior>().associatedCharacter = associatedCharacter;
         blockSuccess = false;
-        blockTimer = 0.4f + Random.Range(0.1f, 0.35f);
+        blockTimer = 0.6f;
     }
 
 	void OnGUI () {
@@ -96,7 +96,7 @@ public class BattleBehavior : MonoBehaviour {
 		// Adjust the first 2 coordinates to place it somewhere else on-screen
 		Camera camera = Camera.main;
 		InitStyles ();
-		float x = camera.WorldToScreenPoint(transform.position).x-40;
+		float x = camera.WorldToScreenPoint(transform.position).x-45;
 		float y = camera.WorldToScreenPoint(-transform.position).y+560;
 		// Draw the background image
 		GUI.Box (new Rect (x,y, healthBarLength*2,16), "hello world", currentStyle);
@@ -147,10 +147,9 @@ public class BattleBehavior : MonoBehaviour {
 		if(hp > maxHP)
 			hp = maxHP;
 		
-		if (maxHP < 1) {
-			Destroy(gameObject);
+		if(maxHP <1)
 			maxHP = 1;
-		}
+		
 		healthBarLength =(64) * (hp / (float)maxHP);
 	}
 }

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class TurnController : MonoBehaviour {
 
@@ -11,13 +13,14 @@ public class TurnController : MonoBehaviour {
     public static int enemyHealth = 20;
     int attackTarget = 0;
     bool attacking = false;
-
+	public int enemyDamage = 3;
     public Transform powEffect;
-
+	List<int> deadChars = new List<int>();
     GameObject[] characters;
 
 	// Use this for initialization
 	void Start () {
+
         timer = 0;
         characters = new GameObject[3];
         int i = 0;
@@ -43,20 +46,23 @@ public class TurnController : MonoBehaviour {
             timer -= Time.deltaTime;
             if (timer <= 0 && !attacking) {
                 float rng = Random.value;
-                if (rng < 0.33f) {
+				attackTarget = (int)(rng*characters.Length);
+               /* if (rng < 0.33f) {
                     attackTarget = 0;
                 } else if (rng < 0.66f) {
                     attackTarget = 1;
                 } else {
                     attackTarget = 2;
-                }
+                }*/
                 attacking = true;
                 characters[attackTarget].GetComponent<BattleBehavior>().BlockSequence();
             }
         }
 
         if (enemyHealth <= 0) {
-            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+			Application.LoadLevel("DaytimeMainMenu");
+
+			GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
             if (enemy != null) {
                 Destroy(enemy);
             }
