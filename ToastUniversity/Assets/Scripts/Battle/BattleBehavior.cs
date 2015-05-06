@@ -96,16 +96,16 @@ public class BattleBehavior : MonoBehaviour {
 		// Adjust the first 2 coordinates to place it somewhere else on-screen
 		Camera camera = Camera.main;
 		InitStyles ();
-		float x = camera.WorldToScreenPoint(transform.position).x-30;
-		float y = camera.WorldToScreenPoint(-transform.position).y+130;
+		float x = camera.WorldToScreenPoint(transform.position).x-40;
+		float y = camera.WorldToScreenPoint(-transform.position).y+560;
 		// Draw the background image
-		GUI.Box (new Rect (x,y, healthBarLength,8), "hello world", currentStyle);
+		GUI.Box (new Rect (x,y, healthBarLength*2,16), "hello world", currentStyle);
 		
 		// Create a second Group which will be clipped
 		// We want to clip the image and not scale it, which is why we need the second Group
 		//GUI.color = Color.black;
 		// Draw the foreground image
-		GUI.Box (new Rect (x,y,healthBarLength,8), "hello world", currentStyle);
+		GUI.Box (new Rect (x,y,healthBarLength*2,16), "hello world", currentStyle);
 
 	}
 	private void InitStyles()
@@ -147,9 +147,10 @@ public class BattleBehavior : MonoBehaviour {
 		if(hp > maxHP)
 			hp = maxHP;
 		
-		if(maxHP <1)
+		if (maxHP < 1) {
+			Destroy(gameObject);
 			maxHP = 1;
-		
+		}
 		healthBarLength =(64) * (hp / (float)maxHP);
 	}
 }
