@@ -1,0 +1,35 @@
+7
+You
+Hey Toaster! What are you up to?
+1
+toasterfA
+
+Toaster
+...
+1
+toasterfA_M
+
+You
+Oh, really?! I didn't think toasters knew how.
+1
+toasterfA
+
+Toaster
+...
+1
+toasterfA_M
+
+You
+Well it's not like I've talked to that many toasters.
+1
+toasterfA
+
+Toaster
+...
+1
+toasterfA_M
+
+You
+Haha! I guess so! Wow you really know your stuff!
+1
+toasterfA

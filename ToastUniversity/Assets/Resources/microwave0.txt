@@ -1,0 +1,55 @@
+11
+Microwave
+*beep* *beep* *beep*
+1
+microwaveA_M
+
+Microwave
+Augh!!! God this is so annoying!!
+1
+microwaveA_M
+
+You
+Um, are you okay? Do you need help?
+1
+microwaveA
+
+Microwave
+Haaaah? *beep* How would a *beep* like you help me the *beep* out?!
+1
+microwaveA_M
+
+You
+Uh, well...
+1
+microwaveA
+
+Microwave
+Just get out of the *beep* way and let me *beep*-ing deal with my own *beep*, you little shit!
+1
+microwaveA_M
+
+You
+Okay...
+1
+microwaveA
+
+You
+...ah. I think we just need to open your door and close it again.
+1
+microwaveA
+
+You
+Is that better?
+1
+microwaveA
+
+Microwave
+...shut up.
+1
+microwaveA_M
+
+Microwave
+...thanks.
+1
+microwaveA_M

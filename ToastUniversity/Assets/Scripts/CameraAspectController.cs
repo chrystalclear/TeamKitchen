@@ -3,6 +3,10 @@ using System.Collections;
 
 public class CameraAspectController : MonoBehaviour {
 
+    void Awake () {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     // Use this for initialization
     void Start () {
         // set the desired aspect ratio (the values in this example are

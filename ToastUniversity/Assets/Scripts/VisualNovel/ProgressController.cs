@@ -21,6 +21,10 @@ public class ProgressController : MonoBehaviour {
     public static Dictionary<string, Sprite> backgroundSprites = new Dictionary<string, Sprite>();
     public Sprite[] bgsprites;
 
+    void Awake () {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
 	// Use this for initialization
     void Start () {
         gameStage = 0;

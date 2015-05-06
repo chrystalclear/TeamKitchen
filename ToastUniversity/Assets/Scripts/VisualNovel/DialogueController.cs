@@ -30,6 +30,10 @@ public class DialogueController : MonoBehaviour {
     private Color darkened = new Color(.5f, .5f, .5f);
     private Color normal = new Color(1, 1, 1);
 
+    void Awake () {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     // Use this for initialization
     void Start () {
 		//Camera.main.aspect = 640f / 480f;

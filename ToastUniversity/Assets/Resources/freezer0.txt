@@ -2,14 +2,14 @@
 You
 Wow it's hot today. Isn't it really hot with that fur coat?
 1
-freezer
+freezerA
 
 Freezer
 No.
 1
-freezer_M
+freezerA_M
 
 You
 ...alright.
 1
-freezer
+freezerA
