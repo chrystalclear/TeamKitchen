@@ -40,6 +40,8 @@ public class ProgressController : MonoBehaviour {
             case 0:
                 background.GetComponent<SpriteRenderer>().sprite = backgroundSprites["ClassroomAft(WIP)"];
                 dialogueController.GetComponent<TestDialogue>().dialogFileName = "Assets/Scripts/VisualNovel/Day0AfterSchool.txt";
+				dialogueController.GetComponent<TestDialogue>().textAsset=Resources.Load ("Day0AfterSchool") as TextAsset;
+				print (dialogueController.GetComponent<TestDialogue>().textAsset.ToString ());
                 dialogueController.GetComponent<TestDialogue>().num_messages = 29;
                 dialogueController.GetComponent<TestDialogue>().LoadMessages(0);
                 gameStage++;
@@ -47,7 +49,8 @@ public class ProgressController : MonoBehaviour {
             case 1:
                 background.GetComponent<SpriteRenderer>().sprite = backgroundSprites["ClassroomNight(WIP)"];
                 dialogueController.GetComponent<TestDialogue>().dialogFileName = "Assets/Scripts/VisualNovel/Day0Night.txt";
-                dialogueController.GetComponent<TestDialogue>().num_messages = 53;
+				dialogueController.GetComponent<TestDialogue>().textAsset=Resources.Load ("Day0Night") as TextAsset;
+				dialogueController.GetComponent<TestDialogue>().num_messages = 53;
                 dialogueController.GetComponent<TestDialogue>().LoadMessages(0);
                 gameStage++;
                 break;

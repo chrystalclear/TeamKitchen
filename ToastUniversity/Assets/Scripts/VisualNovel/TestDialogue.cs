@@ -16,7 +16,7 @@ public class TestDialogue : MonoBehaviour {
     // True iff we're currently in dialogue from making the first choice.
     private bool firstChoice = false;
 
-    public int num_messages = 13;
+    public int num_messages;
     private string[] labels;
     private string[] messages;
     private string[][] images;
@@ -41,6 +41,7 @@ public class TestDialogue : MonoBehaviour {
     private string[] choiceMessages; // The options presented at each choice. choiceMessages[2*i] and [2*i + 1] represent the options for choiceIndices[i]
 
 	public string dialogFileName;
+	public TextAsset textAsset;
     // Use this for initialization
     void Start () {
         LoadMessages(step);
@@ -82,7 +83,8 @@ public class TestDialogue : MonoBehaviour {
      * */
 
     public void LoadMessages (int s) {
-		string[] lines = System.IO.File.ReadAllLines(dialogFileName);
+		//string[] lines = System.IO.File.ReadAllLines(dialogFileName);
+		string[] lines = textAsset.ToString ().Split ('\n');
         //string url = "http://www.calvinkirbikaka.com/games/ToastUniversity/testScript.txt";
         //WWW www = new WWW(url);
         //string[] lines = www.text.Split('\n');
@@ -91,6 +93,8 @@ public class TestDialogue : MonoBehaviour {
         step = 0;
         arrayStep = 0;
         choiceStep = 0;
+		int.TryParse (lines [0], out num_messages);
+		num_messages++;
         labels = new string[num_messages];
         messages = new string[num_messages];
         images = new string[num_messages][];
@@ -98,12 +102,12 @@ public class TestDialogue : MonoBehaviour {
         choiceSecond = new int[num_messages / 2];
         choiceEnd = new int[num_messages / 2];
         choiceMessages = new string[num_messages];
-		int i = 0;
+		int i = 1;
 		int j = 0;
 		int k;
         int choice_count = 0;
         bool first_choice = false;
-		while (i<lines.Length) {
+		while (i<lines.Length) { 
 			labels [j] = lines[i++];
 			messages [j] = lines[i++];
 			int length;

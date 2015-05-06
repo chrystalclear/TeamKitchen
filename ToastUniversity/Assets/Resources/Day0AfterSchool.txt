@@ -1,0 +1,153 @@
+29
+DAY 1
+AFTERNOON
+0
+
+Zach
+Ho there, lost child. I see thou hast troubles.
+1
+zach
+CHOICE
+I... what?!
+Sorry, I don't have any spare change.
+
+You
+I... what?!
+1
+zach
+
+Zach
+Forsooth, I can help thee.
+1
+zach_M
+
+You
+...Please stop.
+1
+zach
+ENDCHOICE
+
+You
+Sorry, I don't have any spare change.
+1
+zach
+
+Zach
+What? No, I'm not--
+1
+zach_M
+ENDCHOICE
+
+Zach
+Fine. Sue me for trying to add a little drama to your life.
+1
+zach_M
+
+Zach
+Anyway, I heard where those stuck-up rich folk were saying to you. They're really putting you down, huh.
+1
+zach_M
+
+You
+It's... not that bad. I can handle it.
+1
+zach
+
+Zach
+Sure, kiddo. Well, if you wanted a chance to catch up to them, I could help you out. You know... lend you my steel.
+1
+zach_M
+
+You
+Uhh... Meaning...?
+1
+zach
+
+Zach
+You know... training your skills in the culinary arts during the 'eve.
+1
+zach_M
+
+You
+Sorry, I still don't--
+1
+zach
+
+Zach
+Look, just show up here tonight and I'll keep the door open for ya so you can practice cooking or whatever, okay?!
+1
+zach_M
+
+Zach
+Jeez, I'm not paid enough for this.
+1
+zach_M
+CHOICE
+Okay! See you there!
+I'm not sure if I should...
+
+You
+Okay! See you there!
+1
+zach
+
+Zach
+Hey wow, you're sure quick to trust the random janitor who comes up to you and offers to break you into the school at night.
+1
+zach_M
+
+Zach
+I didn't think this would be THAT easy.
+1
+zach_M
+
+Zach
+I mean-- not judging you or anything.
+1
+zach_M
+
+Zach
+Uh, well, not out loud I guess.
+1
+zach_M
+ENDCHOICE
+
+You
+I'm not sure if I should...
+1
+zach
+
+Zach
+Come on, kid. Don't you want to show those prissy kids you got what it takes? You won't get into trouble. Er- well- not THAT much trouble.
+1
+zach_M
+
+You
+But I'm already in trouble most of the time!
+1
+zach
+
+Zach
+That's the spirit! A little more won't hurt.
+1
+zach_M
+ENDCHOICE
+
+Zach
+Come around midnight and I'll leave the doors unlocked.
+1
+zach_M
+
+You
+Is that safe for the school? Aren't there security issues with that?
+1
+zach
+
+Zach
+Eh, not my problem.
+1
+zach_M
+
+ 
+...
+0
