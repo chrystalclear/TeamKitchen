@@ -11,6 +11,7 @@ public class DaytimeMenuController : MonoBehaviour {
      * */
     private int menuState;
     public GUIStyle style;
+    private string characterSelect;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +46,7 @@ public class DaytimeMenuController : MonoBehaviour {
                                         cameraHeight * 42 / 100,
                                         cameraWidth * 60 / 100,
                                         cameraHeight * 15 / 100), "Appliance Info")) {
+                    menuState = 2;
                 }
                 if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 20 / 100,
                                         cameraHeight * 64 / 100,
@@ -59,6 +61,91 @@ public class DaytimeMenuController : MonoBehaviour {
                 break;
             /* CHAT SELECT */
             case 1:
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 5 / 100,
+                                        cameraHeight * 5 / 100,
+                                        cameraWidth * 30 / 100,
+                                        cameraHeight * 10 / 100), "Back")) {
+                    menuState = 0;
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 37 / 100,
+                                        cameraHeight * 20 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Freezer")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 7 / 100,
+                                        cameraHeight * 35 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "French Press")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 67 / 100,
+                                        cameraHeight * 35 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Microwave")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 37 / 100,
+                                        cameraHeight * 50 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Toaster")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 7 / 100,
+                                        cameraHeight * 65 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Rice Cooker")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 67 / 100,
+                                        cameraHeight * 65 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Cocktail Shaker")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 37 / 100,
+                                        cameraHeight * 80 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Blender")) {
+                }
+                break;
+            /* CHAR INFO */
+            case 2:
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 5 / 100,
+                                        cameraHeight * 5 / 100,
+                                        cameraWidth * 30 / 100,
+                                        cameraHeight * 10 / 100), "Back")) {
+                    menuState = 0;
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 37 / 100,
+                                        cameraHeight * 20 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Freezer")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 7 / 100,
+                                        cameraHeight * 35 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "French Press")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 67 / 100,
+                                        cameraHeight * 35 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Microwave")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 37 / 100,
+                                        cameraHeight * 50 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Toaster")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 7 / 100,
+                                        cameraHeight * 65 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Rice Cooker")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 67 / 100,
+                                        cameraHeight * 65 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Cocktail Shaker")) {
+                }
+                if (GUI.Button(new Rect(leftEdgeX + cameraWidth * 37 / 100,
+                                        cameraHeight * 80 / 100,
+                                        cameraWidth * 26 / 100,
+                                        cameraHeight * 12 / 100), "Blender")) {
+                }
                 break;
         }
         
